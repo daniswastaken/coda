@@ -1,4 +1,4 @@
-# Danis's Arch Linux Dotfiles
+# My Arch Linux Dotfiles
 
 These are the dotfiles for my Arch Linux setup featuring Hyprland, Waybar, and Rofi, styled with a One Dark theme.
 

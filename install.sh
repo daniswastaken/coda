@@ -36,14 +36,4 @@ for file in .bashrc .bash_profile; do
     fi
 done
 
-# Link Wallpapers
-if [ -d "$DOTFILES_DIR/Wallpapers" ]; then
-    echo "Symlinking Wallpapers..."
-    if [ -e "$HOME/Wallpapers" ] && [ ! -L "$HOME/Wallpapers" ]; then
-        echo "Backing up existing $HOME/Wallpapers to $HOME/Wallpapers.backup"
-        mv "$HOME/Wallpapers" "$HOME/Wallpapers.backup"
-    fi
-    ln -sfn "$DOTFILES_DIR/Wallpapers" "$HOME/Wallpapers"
-fi
-
 echo "Dotfiles setup complete!"
