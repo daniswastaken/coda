@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1777003125837303-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>document-unpack</icon>
+	<name>Extract Archive</name>
+	<submenu></submenu>
+	<unique-id>1777003125837303-3</unique-id>
+	<command>bash -c 'DEST=$(yad --file-selection --directory --title="Extract To Folder"); if [ -n "$DEST" ] &amp;&amp; [ -d "$DEST" ]; then for f in %F; do case "$f" in *.zip) unzip -o "$f" -d "$DEST"; ;; *.tar.gz|*.tgz) tar -xzf "$f" -C "$DEST"; ;; *.tar.bz2|*.tbz2) tar -xjf "$f" -C "$DEST"; ;; *.tar.xz|*.txz) tar -xJf "$f" -C "$DEST"; ;; *.rar) unrar x -o+ "$f" "$DEST"; ;; esac; done; fi'</command>
+	<description>Extract selected archive(s)</description>
+	<range></range>
+	<patterns>*.zip,*.tar.gz,*.tgz,*.tar.bz2,*.tbz2,*.tar.xz,*.txz,*.rar</patterns>
+	<startup-notify/>
+	<only-files/>
+</action>
+</actions>
